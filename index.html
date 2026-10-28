@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>喵搭子 · 测测我们是哪对猫猫搭子</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <section class="screen" id="cover">
+    <div class="cover-head">
+      <span class="label-sticker">喵搭子</span>
+      <h1 class="h1"><span id="coverLine1">测测我们是</span><br><span id="coverLine2">哪对猫猫搭子</span></h1>
+    </div>
+    <div class="collage"><i class="tape kraft tl"></i><i class="tape mustard br"></i><div class="cats" id="coverCats"></div></div>
+    <p class="tagline"><span id="coverSub">1 分钟测出你是哪只猫，再叫上你的搭子</span></p>
+    <div class="cover-form">
+      <input class="nick" id="nickInput" maxlength="16" placeholder="你的昵称（选填，会印在大头贴上）">
+      <button class="btn primary hidden" id="reuseBtn" type="button">直接用上次的结果配对</button>
+      <button class="btn primary" id="startBtn" type="button">开始测试</button>
+      <button class="btn link hidden" id="lastBtn" type="button">看看我上次的结果</button>
+    </div>
+    <p class="foot">娱乐测试 · 仅供参考</p>
+  </section>
+
+  <section class="screen" id="quiz">
+    <div class="quiz-top">
+      <button class="back" id="backBtn" type="button">‹ 上一题</button>
+      <span class="progress-text" id="progText">1 / 12</span>
+    </div>
+    <div class="tape-bar"><i id="barFill"></i></div>
+    <div class="q-head">
+      <h2 class="h2" id="qTitle"></h2>
+      <img class="peek" id="quizPeek" alt="">
+    </div>
+    <div id="opts"></div>
+  </section>
+
+  <section class="screen" id="solo">
+    <div id="soloHero"></div>
+    <div class="card" id="soloBody"></div>
+    <div class="actions">
+      <button class="btn primary" id="inviteBtn" type="button">叫 ta 来测，看看我们是哪对搭子</button>
+      <button class="btn ghost" id="soloPosterBtn" type="button">保存我的海报</button>
+      <button class="btn link" id="retakeBtn" type="button">重新测一次</button>
+    </div>
+    <div class="follow hidden" id="soloFollow"><button class="btn link" type="button" data-follow="1">关注作者，下期新测试第一时间玩</button></div>
+    <div id="soloTip"></div>
+    <p class="foot">娱乐测试 · 仅供参考</p>
+  </section>
+
+  <section class="screen" id="duo">
+    <div id="duoHero"></div>
+    <div class="card" id="duoBody"></div>
+    <div class="actions">
+      <button class="btn primary" id="sendBackBtn" type="button">把结果发回给 ta</button>
+      <button class="btn ghost" id="duoPosterBtn" type="button">保存双人海报</button>
+      <button class="btn link" id="duoNextBtn" type="button">我也去邀请别人</button>
+    </div>
+    <div class="follow hidden" id="duoFollow"><button class="btn link" type="button" data-follow="1">关注作者，下期新测试第一时间玩</button></div>
+    <div id="duoTip"></div>
+    <p class="foot">娱乐测试 · 仅供参考</p>
+  </section>
+</div>
+
+<div class="sheet hidden" id="relSheet">
+  <div class="sheet-box">
+    <i class="tape kraft top"></i>
+    <p class="sheet-title">你们是什么关系？</p>
+    <div class="chips" id="relChips"></div>
+    <p class="sheet-tip">选好就把链接发给 ta</p>
+    <button class="btn link" id="relCancel" type="button">取消</button>
+  </div>
+</div>
+
+<div class="poster hidden" id="posterBox">
+  <div class="poster-box">
+    <img id="posterImg" alt="海报">
+    <p class="poster-tip" id="posterTip">长按图片保存</p>
+    <button class="btn primary hidden" id="posterSave" type="button">保存到相册</button>
+    <button class="btn ghost" id="posterClose" type="button">关闭</button>
+  </div>
+</div>
+
+<div class="toast hidden" id="toast"></div>
+<canvas id="posterCanvas" width="1080" height="1440" class="hidden"></canvas>
+
+<script src="js/data.js"></script>
+<script src="js/core.js"></script>
+<script src="js/poster.js"></script>
+<script src="js/qrcode.js"></script>
+<script src="js/platform.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
